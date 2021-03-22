@@ -1,0 +1,23 @@
+{
+  "name": "mass-professional-readme-generator",
+  "version": "1.0.0",
+  "description": "Professional README Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schimmoellerm/mass-professional-readme-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Schimmoellerm/mass-professional-readme-generator/issues"
+  },
+  "homepage": "https://github.com/Schimmoellerm/mass-professional-readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
