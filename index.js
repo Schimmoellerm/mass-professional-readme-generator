@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Choices = require('inquirer/lib/objects/choices');
 
 
 
@@ -19,7 +20,9 @@ inquirer
 
     {type: 'input', message: "Provide test instructions for your project", name: "test_instructions"},
 
-    
+    {type: 'list', message: "Which license would you like to apply to this project?", choices:[], name: "license"},
+
+
 
 
 ])
