@@ -22,6 +22,10 @@ inquirer
 
     {type: 'list', message: "Which license would you like to apply to this project?", choices:['MIT License', 'The Unlicense', 'Academic Free License v3.0', 'Creative Commons license family', 'Open Software License 3.0'], name: "license"},
 
+    {type: 'input', message: "Provide a link to your git hub account", name: "git_hub"},
+
+    {type: 'input', message: "Provide your email address", name: "email"}
+
 
 
 
