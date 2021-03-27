@@ -38,8 +38,18 @@ inquirer
     }
 })
 
-const createReadme = ({inputTitle, description, installation_instructions, usage_information, contribution_information, test_instructions, license, git_hub, email}) =>
-`# ${inputTitle}
+
+const licenseChooser = (license) => {
+    const licenseTypes = {'MIT License': 'MIT'}
+    //if (license === 'MIT License') {
+    return `https://img.shields.io/badge/license-${licenseTypes[license]}-green`
+    
+}
+
+const createReadme = ({inputTitle, description, installation_instructions, usage_information, contribution_information, test_instructions, license, git_hub, email}) => 
+
+`${licenseChooser(license)}
+# ${inputTitle}
 
 ## Description
 ${description}
@@ -60,7 +70,7 @@ ${installation_instructions}
 ${usage_information}
 
 ## License
-${license}
+This project is cover under ${license}
 
 ## Contributing
 ${contribution_information}
