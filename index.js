@@ -20,7 +20,7 @@ inquirer
 
     {type: 'input', message: "Provide test instructions for your project", name: "test_instructions"},
 
-    {type: 'list', message: "Which license would you like to apply to this project?", choices:[], name: "license"},
+    {type: 'list', message: "Which license would you like to apply to this project?", choices:['MIT License', 'The Unlicense', 'Academic Free License v3.0', 'Creative Commons license family', 'Open Software License 3.0'], name: "license"},
 
 
 
