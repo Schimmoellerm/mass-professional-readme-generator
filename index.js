@@ -24,7 +24,7 @@ inquirer
 ])
 .then(answers => {
     const proReadMe = createReadme(answers);
-    fs.writeFile('./READMEexample.md', proReadMe, (error) => {if (error) console.log("This didn't work.")});
+    fs.writeFile('./Output/READMEexample.md', proReadMe, (error) => {if (error) console.log("This didn't work.")});
 })
 .catch(error => {
     if(error.isTtyError) {
@@ -36,7 +36,7 @@ inquirer
 
 
 const licenseChooser = (license) => {
-    const licenseTypes = {'MIT License': 'MIT', 'The Unlicense': 'Unlicense', 'Apache 2.0 License': 'Apache 2.0', 'Creative Commons license family': 'CC0 1.0', 'Open Database License': 'ODbL'   }
+    const licenseTypes = {'MIT License': 'MIT', 'The Unlicense': 'Unlicense', 'Apache 2.0 License': 'Apache2.0', 'Creative Commons license family': 'CC01.0', 'Open Database License': 'ODbL'   }
     //if (license === 'MIT License') {
     return `https://img.shields.io/badge/license-${licenseTypes[license]}-green`
     
@@ -76,6 +76,6 @@ ${test_instructions}
 
 ## Questions
 If you have questions about this README generator you can reach me at the following:
-GitHub: ${git_hub}
-Email: ${email}`
+[GitHub](${git_hub})
+[Email](mailto:${email})`
 
