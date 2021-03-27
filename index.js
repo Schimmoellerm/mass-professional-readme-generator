@@ -1,11 +1,7 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Choices = require('inquirer/lib/objects/choices');
+//const Choices = require('inquirer/lib/objects/choices');
 
-
-
-// TODO: Create an array of questions for user input
 inquirer
 .prompt([
     {type: 'input', message: "What is the title of your project?", name: 'inputTitle'},
@@ -20,7 +16,7 @@ inquirer
 
     {type: 'input', message: "Provide test instructions for your project", name: "test_instructions"},
 
-    {type: 'list', message: "Which license would you like to apply to this project?", choices:['MIT License', 'The Unlicense', 'Academic Free License v3.0', 'Creative Commons license family', 'Open Software License 3.0'], name: "license"},
+    {type: 'list', message: "Which license would you like to apply to this project?", choices:['MIT License', 'The Unlicense', 'Apache 2.0 License', 'Creative Commons license family', 'Open Database License'], name: "license"},
 
     {type: 'input', message: "Provide a link to your git hub account", name: "git_hub"},
 
@@ -40,7 +36,7 @@ inquirer
 
 
 const licenseChooser = (license) => {
-    const licenseTypes = {'MIT License': 'MIT'}
+    const licenseTypes = {'MIT License': 'MIT', 'The Unlicense': 'Unlicense', 'Apache 2.0 License': 'Apache 2.0', 'Creative Commons license family': 'CC0 1.0', 'Open Database License': 'ODbL'   }
     //if (license === 'MIT License') {
     return `https://img.shields.io/badge/license-${licenseTypes[license]}-green`
     
@@ -48,7 +44,7 @@ const licenseChooser = (license) => {
 
 const createReadme = ({inputTitle, description, installation_instructions, usage_information, contribution_information, test_instructions, license, git_hub, email}) => 
 
-`${licenseChooser(license)}
+`![Badge](${licenseChooser(license)})
 # ${inputTitle}
 
 ## Description
@@ -70,7 +66,7 @@ ${installation_instructions}
 ${usage_information}
 
 ## License
-This project is cover under ${license}
+This project is covered under ${license}
 
 ## Contributing
 ${contribution_information}
