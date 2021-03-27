@@ -25,18 +25,51 @@ inquirer
     {type: 'input', message: "Provide a link to your git hub account", name: "git_hub"},
 
     {type: 'input', message: "Provide your email address", name: "email"}
-
-
-
-
 ])
-const questions = [];
+.then(answers => {
+    const proReadMe = createReadme(answers);
+    fs.writeFile('./READMEexample.md', proReadMe, (error) => {if (error) console.log("This didn't work.")});
+})
+.catch(error => {
+    if(error.isTtyError) {
+    console.log(error);
+    }else {
+    console.log(error);
+    }
+})
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const createReadme = ({inputTitle, description, installation_instructions, usage_information, contribution_information, test_instructions, license, git_hub, email}) =>
+`# ${inputTitle}
 
-// TODO: Create a function to initialize app
-function init() {}
+## Description
+${description}
 
-// Function call to initialize app
-init();
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
+5. [Contributing](#contributing)
+6. [Tests](#tests)
+7. [Questions](#questions)
+
+## Installation
+${installation_instructions}
+
+## Usage
+${usage_information}
+
+## License
+${license}
+
+## Contributing
+${contribution_information}
+
+## Tests
+${test_instructions}
+
+## Questions
+If you have questions about this README generator you can reach me at the following:
+GitHub: ${git_hub}
+Email: ${email}`
+
